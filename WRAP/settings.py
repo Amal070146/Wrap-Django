@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-+gxxdd1-44w)%v=8n+r$by0r&n9o2)ri4*=7!ctvxj+&io&#a!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://wrap-django-production.up.railway.app', 'localhost']
+CSRF_TRUSTED_ORIGINS = ['https://wrap-django-production.up.railway.app']
 
 
 # Application definition
@@ -127,5 +128,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DATE_FORMAT = ("Y-m-d")
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_URL = '/static/'
