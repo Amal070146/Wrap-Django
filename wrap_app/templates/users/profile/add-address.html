@@ -26,21 +26,25 @@
     height: 40px;
     cursor: pointer;
   }
+
   .custom-map-control-button:hover {
     background: rgb(235, 235, 235);
   }
+
   .address-display-div {
     overflow: scroll;
     overflow-x: auto;
     width: 100vw;
   }
-  .address-display-div > div {
+
+  .address-display-div>div {
     width: 500px;
   }
 
   .add-button {
     border-radius: 50%;
   }
+
   input {
     width: 300px;
     height: 40px;
@@ -63,34 +67,20 @@
       <p>Longitude : {{adrs.longitude}}</p>
       <form action="{% url 'delete_address' %}" method="post">
         {% csrf_token %}
-        
-        <input
-          type="hidden"
-          name="address_title"
-          value="{{adrs.address_title}}"
-        />
-        <input
-          type="hidden"
-          name="address_content"
-          value="{{adrs.address_content}}"
-        />
+
+        <input type="hidden" name="address_title" value="{{adrs.address_title}}" />
+        <input type="hidden" name="address_content" value="{{adrs.address_content}}" />
         <input type="hidden" name="aid" value="{{adrs.aid}}" />
-        <button class="bg-red-100 w-8 h-8 flex">
-          <img
-            src="../../../static/images/profile-page/delete-logo.svg"
-            alt=""
-          />
+        <button class="w-6 h-6 flex ">
+          <img class="h-full w-full" src="../../../static/images/profile-page/delete-logo.svg" alt="" />
         </button>
       </form>
     </div>
     {% endfor %}
   </div>
-  </div>
-  <form
-  class="bg-gray-100 p-4 flex flex-col justify-center items-center gap-2"
-  action="{% url 'add_address' %}"
-  method="post"
->
+</div>
+<form class="bg-gray-100 p-4 flex flex-col justify-center items-center gap-2" action="{% url 'add_address' %}"
+  method="post">
   {% csrf_token %}
   <div class="flex flex-col gap-2">
     <h1 class="text-[#009743]">Pick your current location as address</h1>
@@ -107,18 +97,8 @@
     </div>
     <input type="hidden" name="longitude" value="{{log}}" required />
     <input type="hidden" name="latitude" value="{{lat}}" required />
-    <input
-      type="text"
-      name="address_title"
-      placeholder="Enter Location Title"
-      required
-    />
-    <input
-      type="text"
-      name="address_content"
-      placeholder="Enter your current address"
-      required
-    />
+    <input type="text" name="address_title" placeholder="Enter Location Title" required />
+    <input type="text" name="address_content" placeholder="Enter your current address" required />
   </div>
   <input type="submit" value="Submit" name="submit" />
 </form>

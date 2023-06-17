@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block style %}
 <link rel="stylesheet" href="../../static/css/reward.css" />{% endblock %}
- {% block title %} Rewards{% endblock %} {% block content %}
+{% block title %} Rewards{% endblock %} {% block content %}
 <div class="rewards">
   <div class="wrap-coin-card">
     <div class="wrap-coin-card-left">
@@ -9,50 +9,44 @@
     <div class="wrap-coin-card-right">
       <img src="../../static/images/WRAPCOIN-white.svg" />
       <div class="wrap-coin-card-right-content">
-        <h3
-          style="
+        <h3 style="
             line-height: 1;
             font-size: xx-large;
             font-weight: bolder;
-            opacity: 0.7;
+            opacity: 0.9;
             margin: 0;
-          "
-        >
+            color: #fff;
+          ">
           BALANCE
         </h3>
-        <h3
-          style="
+        <h3 style="
             line-height: 1;
             font-size: 65px;
             font-weight: bolder;
             color: white;
             margin: 0;
-          "
-          data-count="1352"
-        >
-          1354
+          " data-count="1352">
+          {{coins}}
         </h3>
-        <h3
-          style="
+        <h3 style="
             line-height: 1;
             font-size: 23px;
             font-weight: bold;
-            opacity: 0.7;
+            opacity: 0.9;
             margin: 0;
-          "
-        >
+            color: #fff;
+          ">
           WRAP COINS
         </h3>
       </div>
     </div>
   </div>
-  <a style="display: flex;gap: 10px; padding: 5px 30px; text-decoration: none ; border-radius: 8.19608px;background-color: #009743; " class="mt-4" href="{% url 'redeem' %}">
-    <h2
-      style="
+  <a style="display: flex;gap: 10px; padding: 5px 30px; text-decoration: none ; border-radius: 8.19608px;background-color: #009743; "
+    class="mt-4" href="{% url 'redeem' %}">
+    <h2 style="
         
         color: white;
-      "
-    >
+      ">
       Redeem Offers
     </h2>
     <img src="../../static/images/redeem-icon.svg" alt="">

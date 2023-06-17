@@ -169,7 +169,9 @@ def delete_booking(request):
 def rewards(request):
     if 'uname' in request.session:
         data = {'name':request.session.get('uname')}
-        return render(request,'users/rewards.html',context=data)
+        users  = User.objects.get(name=request.session['uname'])
+        print(users.coins)
+        return render(request,'users/rewards.html',{"context":data,"coins":users.coins})
     else:
         data = {'status':'You need to login first'}
         return render(request,'signin.html',context=data)
